@@ -14,7 +14,7 @@
   Built by Khoi Hoang https://github.com/khoih-prog/ESPAsync_WiFiManager
   Licensed under MIT license
   
-  Version: 1.9.1
+   Version: 1.9.1
 
   Version Modified By  Date      Comments
   ------- -----------  ---------- -----------
@@ -384,6 +384,9 @@ class ESPAsync_WiFiManager
     bool          autoConnect();
     bool          autoConnect(char const *apName, char const *apPassword = NULL);
     //////
+
+    // Attempt to connect quickly without the long startup
+    int           fastConnectWifi();
 
     // If you want to start the config portal
     bool          startConfigPortal();
@@ -766,8 +769,6 @@ class ESPAsync_WiFiManager
     }
 };
 
-
-#include "ESPAsync_WiFiManager-Impl.h"
 
 #endif    // ESPAsync_WiFiManager_h
 

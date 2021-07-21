@@ -14,7 +14,7 @@
   Built by Khoi Hoang https://github.com/khoih-prog/ESPAsync_WiFiManager
   Licensed under MIT license
   
-  Version: 1.9.1
+   Version: 1.9.1
 
   Version Modified By  Date      Comments
   ------- -----------  ---------- -----------
@@ -42,10 +42,7 @@
   1.9.1   K Hoang      18/05/2021 Fix warnings with ESP8266 core v3.0.0
  *****************************************************************************************************************************/
 
-#pragma once
-
-#ifndef ESPAsync_WiFiManager_Impl_h
-#define ESPAsync_WiFiManager_Impl_h
+#include "ESPAsync_WiFiManager.h"
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -999,6 +996,11 @@ int ESPAsync_WiFiManager::reconnectWifi()
       LOGERROR1(F("Connected to"), _ssid);
   
   return connectResult;
+}
+
+int ESPAsync_WiFiManager::fastConnectWifi()
+{
+  return connectWifi();
 }
 
 //////////////////////////////////////////
@@ -2352,6 +2354,4 @@ String ESPAsync_WiFiManager::getStoredWiFiPass()
 #endif
 
 //////////////////////////////////////////
-
-#endif    // ESPAsync_WiFiManager_Impl_h
 
